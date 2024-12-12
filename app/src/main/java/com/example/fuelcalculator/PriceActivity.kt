@@ -21,6 +21,6 @@ class PriceActivity : AppCompatActivity() {
         }
 
         val btnNext = findViewById<Button>(R.id.btnNext)
-        val tiPrice = findViewById<TextInputEditText>(R.id.tiPrice)
+        val edtPrice = findViewById<TextInputEditText>(R.id.edtPrice)
     }
 }
