@@ -2,16 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/price"
+    android:id="@+id/consumption"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PriceActivity">
+    tools:context=".ConsumptionActivity">
 
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Preço do Combustível"
+        android:text="Consumo do Carro"
         android:textSize="20dp"
         android:layout_marginLeft="25dp"
         app:layout_constraintBottom_toTopOf="@+id/btnNext"
@@ -23,7 +23,7 @@
         android:id="@+id/tvStep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Passo 1 de 3"
+        android:text="Passo 2 de 3"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:textColor="#eb1010"
@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputPrice"
+        android:id="@+id/textInputConsumption"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -51,11 +51,11 @@
         app:layout_constraintTop_toBottomOf="@+id/tvStep">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPrice"
+            android:id="@+id/edtConsumption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
-            android:hint="Ex: 1.70" />
+            android:hint="Ex: 5 km/l" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

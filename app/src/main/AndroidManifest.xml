@@ -24,6 +24,10 @@
 
         <activity android:name=".PriceActivity"
             android:exported="false" />
+        <activity android:name=".ConsumptionActivity"
+            android:exported="false" />
+        <activity android:name=".DistanceActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

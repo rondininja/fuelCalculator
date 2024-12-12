@@ -9,22 +9,22 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
 
-class PriceActivity : AppCompatActivity() {
+class ConsumptionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_price)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.price)) { v, insets ->
+        setContentView(R.layout.activity_consumption)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.consumption)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
         val btnNext = findViewById<Button>(R.id.btnNext)
-        val edtConsumption = findViewById<TextInputEditText>(R.id.edtPrice)
+        val edtConsumption = findViewById<TextInputEditText>(R.id.edtConsumption)
 
         btnNext.setOnClickListener {
-            val intent = Intent(this, ConsumptionActivity::class.java)
+            val intent = Intent(this, DistanceActivity::class.java)
             startActivity(intent)
         }
     }

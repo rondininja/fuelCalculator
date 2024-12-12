@@ -2,19 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/price"
+    android:id="@+id/distance"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PriceActivity">
+    tools:context=".DistanceActivity">
 
     <TextView
-        android:id="@+id/tvPrice"
+        android:id="@+id/tvDistance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Preço do Combustível"
+        android:text="Distância até o Destino"
         android:textSize="20dp"
         android:layout_marginLeft="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintBottom_toTopOf="@+id/btnResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,26 +23,26 @@
         android:id="@+id/tvStep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Passo 1 de 3"
+        android:text="Passo 3 de 3"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:textColor="#eb1010"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDistance" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Próximo"
+        android:text="Resultado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputPrice"
+        android:id="@+id/textInputDistance"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -51,11 +51,11 @@
         app:layout_constraintTop_toBottomOf="@+id/tvStep">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPrice"
+            android:id="@+id/edtDistance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
-            android:hint="Ex: 1.70" />
+            android:hint="Ex: 200 km" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
