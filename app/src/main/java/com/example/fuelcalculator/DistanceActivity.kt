@@ -24,6 +24,9 @@ class DistanceActivity : AppCompatActivity() {
         val btnResult = findViewById<Button>(R.id.btnResult)
         val edtDistance = findViewById<TextInputEditText>(R.id.edtDistance)
 
+        val price = intent.getFloatExtra(KEY_PRICE, 0f)
+        val consumption = intent.getFloatExtra(KEY_CONSUMPTION, 0f)
+
         btnResult.setOnClickListener {
 
             val strDistance = edtDistance.text.toString()
@@ -37,7 +40,12 @@ class DistanceActivity : AppCompatActivity() {
                     )
                     .show()
             } else {
+
+                val distance = strDistance.toFloat()
                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(KEY_PRICE, price)
+                intent.putExtra(KEY_CONSUMPTION, consumption)
+                intent.putExtra(KEY_DISTANCE, distance)
                 startActivity(intent)
             }
         }

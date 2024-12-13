@@ -26,9 +26,9 @@ class PriceActivity : AppCompatActivity() {
 
         btnNext.setOnClickListener {
 
-            val priceStr = edtPrice.text.toString()
+            val strPrice = edtPrice.text.toString()
 
-            if (priceStr == "") {
+            if (strPrice == "") {
                 Snackbar
                     .make(
                         edtPrice,
@@ -37,7 +37,10 @@ class PriceActivity : AppCompatActivity() {
                     )
                     .show()
             } else{
+
+                val price = strPrice.toFloat()
                 val intent = Intent(this, ConsumptionActivity::class.java)
+                intent.putExtra(KEY_PRICE, price)
                 startActivity(intent)
             }
         }

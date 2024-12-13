@@ -24,6 +24,8 @@ class ConsumptionActivity : AppCompatActivity() {
         val btnNext = findViewById<Button>(R.id.btnNext)
         val edtConsumption = findViewById<TextInputEditText>(R.id.edtConsumption)
 
+        val price = intent.getFloatExtra(KEY_PRICE, 0f)
+
         btnNext.setOnClickListener {
 
             val strConsumption = edtConsumption.text.toString()
@@ -37,9 +39,15 @@ class ConsumptionActivity : AppCompatActivity() {
                     )
                     .show()
             } else {
+
+                val consumption = strConsumption.toFloat()
                 val intent = Intent(this, DistanceActivity::class.java)
+                intent.putExtra(KEY_PRICE, price)
+                intent.putExtra(KEY_CONSUMPTION, consumption)
                 startActivity(intent)
             }
+
+
         }
     }
 }
