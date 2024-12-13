@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class DistanceActivity : AppCompatActivity() {
@@ -22,5 +23,23 @@ class DistanceActivity : AppCompatActivity() {
 
         val btnResult = findViewById<Button>(R.id.btnResult)
         val edtDistance = findViewById<TextInputEditText>(R.id.edtDistance)
+
+        btnResult.setOnClickListener {
+
+            val strDistance = edtDistance.text.toString()
+
+            if (strDistance == "") {
+                Snackbar
+                    .make(
+                        edtDistance,
+                        "Preencha todos os campos",
+                        Snackbar.LENGTH_LONG
+                    )
+                    .show()
+            } else {
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }
