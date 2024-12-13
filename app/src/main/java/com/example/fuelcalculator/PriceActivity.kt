@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class PriceActivity : AppCompatActivity() {
@@ -21,11 +22,24 @@ class PriceActivity : AppCompatActivity() {
         }
 
         val btnNext = findViewById<Button>(R.id.btnNext)
-        val edtConsumption = findViewById<TextInputEditText>(R.id.edtPrice)
+        val edtPrice = findViewById<TextInputEditText>(R.id.edtPrice)
 
         btnNext.setOnClickListener {
-            val intent = Intent(this, ConsumptionActivity::class.java)
-            startActivity(intent)
+
+            val priceStr = edtPrice.text.toString()
+
+            if (priceStr == "") {
+                Snackbar
+                    .make(
+                        edtPrice,
+                        "Preencha todos os campos",
+                        Snackbar.LENGTH_LONG
+                    )
+                    .show()
+            } else{
+                val intent = Intent(this, ConsumptionActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

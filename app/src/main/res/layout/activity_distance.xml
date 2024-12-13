@@ -46,6 +46,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvStep">
@@ -55,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
+            android:inputType="numberDecimal"
             android:hint="Ex: 200 km" />
     </com.google.android.material.textfield.TextInputLayout>
 

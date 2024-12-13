@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class ConsumptionActivity : AppCompatActivity() {
@@ -24,8 +25,21 @@ class ConsumptionActivity : AppCompatActivity() {
         val edtConsumption = findViewById<TextInputEditText>(R.id.edtConsumption)
 
         btnNext.setOnClickListener {
-            val intent = Intent(this, DistanceActivity::class.java)
-            startActivity(intent)
+
+            val strConsumption = edtConsumption.text.toString()
+
+            if (strConsumption == "") {
+                Snackbar
+                    .make(
+                        edtConsumption,
+                        "Preencha todos os campos",
+                        Snackbar.LENGTH_LONG
+                    )
+                    .show()
+            } else {
+                val intent = Intent(this, DistanceActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
