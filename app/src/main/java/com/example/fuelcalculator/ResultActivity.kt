@@ -34,7 +34,16 @@ class ResultActivity : AppCompatActivity() {
         val consumption = intent.getFloatExtra(KEY_CONSUMPTION, 0f)
         val distance = intent.getFloatExtra(KEY_DISTANCE, 0f)
 
+        val tvPrice = findViewById<TextView>(R.id.tvResultPriceValue)
+        val tvConsumption = findViewById<TextView>(R.id.tvResultConsumptionValue)
+        val tvDistance = findViewById<TextView>(R.id.tvResultDistanceValue)
+
         tvResult.text = "R$ " + ((distance / consumption) * price).toString()
+
+        tvPrice.text = price.toString()
+        tvConsumption.text = consumption.toString()
+        tvDistance.text = distance.toString()
+
 
         btnReset.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
