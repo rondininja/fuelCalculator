@@ -7,13 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".DistanceActivity">
 
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/distancia"
+        android:contentDescription="Galão de combustível"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/header"/>
+
     <TextView
         android:id="@+id/tvDistance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Distância até o Destino"
         android:textSize="20dp"
+        android:layout_marginTop="160dp"
         android:layout_marginLeft="25dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +51,7 @@
         android:text="Passo 3 de 3"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:textColor="#eb1010"
+        android:textColor="@color/stepPink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDistance" />
@@ -56,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
+            android:background="@color/edtPurple"
             android:inputType="numberDecimal"
             android:hint="Ex: 200 km" />
     </com.google.android.material.textfield.TextInputLayout>
