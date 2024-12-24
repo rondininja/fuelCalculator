@@ -46,8 +46,6 @@ class ConsumptionActivity : AppCompatActivity() {
                 intent.putExtra(KEY_CONSUMPTION, consumption)
                 startActivity(intent)
             }
-
-
         }
     }
 }
